@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #0E1421;
+  --bg-color: #060C1A;
+  --text-color: #ffffff;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.search-input {
+  background: var(--primary-color);
+  outline: none;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  border-radius: 30px;
+  padding-left: 50px;
+}
+
+.search-input::placeholder {
+  color: #777;
+}
+
+.search-icon {
+  left: 16px;
+}
