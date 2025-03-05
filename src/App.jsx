@@ -11,7 +11,7 @@ const App = () => {
       <div className="app-container">
         <Container>
           <Searchbar />
-          <div className="main-component">
+          <div className="main-component pt-5">
             <MainWeatherCard />
           </div>
         </Container>
