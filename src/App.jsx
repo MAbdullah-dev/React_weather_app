@@ -4,6 +4,8 @@ import { Container } from 'react-bootstrap';
 import Searchbar from './components/Searchbar';
 import MainWeatherCard from './components/MainWeatherCard';
 import Highlight from './components/Highlight';
+import Featurecast from './components/featurecast';
+import Cities from './components/Cities';
 
 
 const App = () => {
@@ -19,6 +21,14 @@ const App = () => {
               </div>
               <div className="col-12 col-xl-5 ">
                 <Highlight />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12 col-xl-7">
+                <Featurecast />
+              </div>
+              <div className="col-12 col-xl-5 ">
+                <Cities />
               </div>
             </div>
           </div>
