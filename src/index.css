@@ -106,7 +106,8 @@ li {
 }
 
 .weather-card img {
-  width: 120px;
+  /* width: 95px; */
+  object-fit: contain;
 }
 
 .highlight {
