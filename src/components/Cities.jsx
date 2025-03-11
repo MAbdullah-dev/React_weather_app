@@ -9,9 +9,6 @@ const Cities = () => {
             <h5 className="title mt-2 mb-3">other cities</h5>
             <div className="row g-4">
                 <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
             </div>
         </div>
     )

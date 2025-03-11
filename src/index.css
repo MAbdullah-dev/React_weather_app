@@ -190,7 +190,8 @@ li {
   height: 100%;
 
   P {
-    font-size: 48px;
+    width: max-content;
+    font-size: 40px;
 
     span {
       font-size: 15px;

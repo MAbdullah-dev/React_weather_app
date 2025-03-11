@@ -1,17 +1,15 @@
-import { faSun } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React from 'react';
 
-const HourlyCard = () => {
+const HourlyCard = ({ hour }) => {
     return (
         <div className="col">
             <div className='h-cards text-center rounded-4'>
-                <span className='d-block'>1pm</span>
-                <FontAwesomeIcon icon={faSun} />
-                <span className='d-block'>26°</span>
+                <span className='d-block'>{new Date(hour.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                <img src={hour.condition.icon} alt={hour.condition.text} />
+                <span className='d-block'>{hour.temp_c}°</span>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HourlyCard
+export default HourlyCard;

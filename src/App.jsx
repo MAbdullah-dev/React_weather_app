@@ -6,16 +6,19 @@ import Highlight from './components/Highlight';
 import Featurecast from './components/featurecast';
 import Cities from './components/Cities';
 import axios from 'axios';
+import { getWeatherByCity } from './api/weatherApi';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState('rawalpindi'); // Default city
+  const [city, setCity] = useState('Islamabad'); // Default city
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=ed24f8510af54c63930180513250703&q=${city}&aqi=no`);
-        setWeatherData(response.data);
+        // const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=ed24f8510af54c63930180513250703&q=${city}&aqi=no`);
+        // setWeatherData(response.data);
+        const data =await getWeatherByCity(city);
+        setWeatherData(data);
       } catch (error) {
         console.error("Error fetching weather data", error);
       }
@@ -39,7 +42,7 @@ const App = () => {
           </div>
           <div className="row">
             <div className="col-12 col-xl-7">
-              <Featurecast />
+              <Featurecast city={city} />
             </div>
             <div className="col-12 col-xl-5">
               <Cities />
