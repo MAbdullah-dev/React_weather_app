@@ -140,16 +140,15 @@ li {
 }
 
 .featurecast .h-cards {
-  border: 1px solid #858991;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.3px);
   -webkit-backdrop-filter: blur(3.3px);
   border: 1px solid rgba(255, 255, 255, 0.25);
+  width: max-content;
 
   span {
-    margin: 15px 0;
+    margin: 15px 1px;
   }
 }
 
@@ -181,7 +180,7 @@ li {
 }
 
 .tomorrow-weather img {
-  width: 100%;
+  width: 75%;
   margin-top: -70px;
 }
 

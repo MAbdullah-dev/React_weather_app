@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import Searchbar from './components/Searchbar';
 import MainWeatherCard from './components/MainWeatherCard';
 import Highlight from './components/Highlight';
-import Featurecast from './components/featurecast';
+import Featurecast from './components/FeatureCast';
 import Cities from './components/Cities';
 import axios from 'axios';
 import { getWeatherByCity } from './api/weatherApi';
@@ -15,9 +15,7 @@ const App = () => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        // const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=ed24f8510af54c63930180513250703&q=${city}&aqi=no`);
-        // setWeatherData(response.data);
-        const data =await getWeatherByCity(city);
+        const data = await getWeatherByCity(city);
         setWeatherData(data);
       } catch (error) {
         console.error("Error fetching weather data", error);
@@ -37,7 +35,14 @@ const App = () => {
               <MainWeatherCard weatherData={weatherData} />
             </div>
             <div className="col-12 col-xl-5">
-              <Highlight />
+              {weatherData && (
+                <Highlight highlights={{
+                  chanceOfRain: weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
+                  uvIndex: weatherData.current.uv,
+                  windStatus: weatherData.current.wind_kph,
+                  humidity: weatherData.current.humidity
+                }} />
+              )}
             </div>
           </div>
           <div className="row">

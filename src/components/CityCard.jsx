@@ -33,7 +33,7 @@ const CityCard = () => {
                 <div key={index} className="col-md-6">
                     <div className="city-card rounded-5 p-4">
                         <p className="m-0">
-                            {city.current.temp_c}° <span>H23° L10°</span>
+                            {city.current.temp_c}° <span>H{city.forecast.forecastday[0].day.maxtemp_c}° L{city.forecast.forecastday[0].day.mintemp_c}°</span>
                         </p>
                         <div className="row align-items-center justify-content-center">
                             <div className="col-8 city-name">
@@ -48,7 +48,7 @@ const CityCard = () => {
             ))}
         </>
     );
-    
+
 }
 
 export default CityCard

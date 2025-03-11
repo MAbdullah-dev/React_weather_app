@@ -5,7 +5,15 @@ import React from 'react'
 
 const MainWeatherCard = ({ weatherData }) => {
     if (!weatherData) return <div>Loading....</div>;
-    const { location, current } = weatherData;
+    const { location, current, forecastday } = weatherData;
+    // console.log(weatherData);
+    // Get the current date and format it
+    const today = new Date();
+    const options = { year: 'numeric', month: 'short', day: '2-digit' };
+    const formattedDate = today.toLocaleDateString(undefined, options);
+    console.log(formattedDate);
+
+
     return (
         <>
             <div className="weather-card rounded-4 p-5">
@@ -22,8 +30,8 @@ const MainWeatherCard = ({ weatherData }) => {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <h2 className="mb-1 fs-2">Monday</h2>
-                        <p className="text-secondary small">5 March, 2025</p>
+                        <h2 className="mb-1 fs-2">{today.toLocaleDateString(undefined, { weekday: 'long' })}</h2>
+                        <p className="text-secondary small">{formattedDate}</p>
                         <h1 className="display-4">{current.temp_c}°C</h1>
                         <p>High: {current.temp_c + 2} Low: {current.temp_c - 2}</p>
                     </div>
@@ -33,7 +41,7 @@ const MainWeatherCard = ({ weatherData }) => {
                                 <img src={current.condition.icon} alt="sun" />
                                 <p className='fs-3 fw-bold'>{current.condition.text}</p>
                             </div>
-                            <p className='fs-5 fw-normal'>Feels Like 26°C</p>
+                            <p className='fs-5 fw-normal'>Feels Like {current.feelslike_c}°C</p>
                         </div>
                     </div>
                 </div>
