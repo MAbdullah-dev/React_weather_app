@@ -22,7 +22,7 @@ const Searchbar = ({ setCity }) => {
                 placeholder="Search City...."
                 className="search-input border-0 "
             />
-            <button onClick={handleSearch} className="btn btn-primary ms-2">Search</button>
+            <button onClick={handleSearch} className="search-btn ms-2">Search</button>
         </div>
     );
 };
