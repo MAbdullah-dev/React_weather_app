@@ -30,11 +30,24 @@ li {
   text-decoration: none;
 }
 
+.max-content {
+  width: max-content;
+}
+
 .app-container {
   width: 100%;
   /* height: 100vh; */
   background-color: var(--bg-color);
   color: var(--text-color);
+}
+
+.search-container .search-btn {
+  background: radial-gradient(circle, #1a2a48 0%, #0d162d 100%);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 210px;
+  color: #ffffff;
 }
 
 .search-input {
@@ -118,6 +131,9 @@ li {
 .highlight-card {
   background: #131E37;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .highlight .highlight-card {
@@ -143,13 +159,25 @@ li {
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.3px);
-  -webkit-backdrop-filter: blur(3.3px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  width: max-content;
+  height: 100%;
+  padding: 4px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   span {
     margin: 15px 1px;
+    font-size: 12px;
   }
+}
+
+.magnetic-effect {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
 }
 
 .Daylight-info {
@@ -202,7 +230,38 @@ li {
 
 }
 
+.cities {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  .title {
+    text-transform: capitalize;
+  }
+}
+
 .cities .city-card .city-name {
   font-size: 20px;
   font-size: 500;
+}
+
+.w-icon {
+  animation: beat 2s ease infinite;
+}
+
+/* @keyframes beat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+} */
+
+::-webkit-scrollbar {
+  width: 0%;
 }

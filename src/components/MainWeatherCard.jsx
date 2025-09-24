@@ -17,7 +17,7 @@ const MainWeatherCard = ({ weatherData }) => {
             <div className="weather-card rounded-4 p-5">
                 <div className="row">
                     <div className="col-6">
-                        <span className="badge rounded-4 mb-3 p-2"><FontAwesomeIcon icon={faLocationDot} /> {location.name}</span>
+                        <span className="badge rounded-4 mb-5 p-2"><FontAwesomeIcon icon={faLocationDot} /> {location.name}</span>
                     </div>
                     <div className="col-6">
                         <div className="buttons mb-3 d-flex justify-content-end">
@@ -28,16 +28,16 @@ const MainWeatherCard = ({ weatherData }) => {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <h2 className="mb-1 fs-2">{today.toLocaleDateString(undefined, { weekday: 'long' })}</h2>
-                        <p className="text-secondary small">{formattedDate}</p>
-                        <h1 className="display-4">{current.temp_c}°C</h1>
-                        <p>High: {current.temp_c + 2} Low: {current.temp_c - 2}</p>
+                        <h2 className="fs-2 mb-4">{today.toLocaleDateString(undefined, { weekday: 'long' })}</h2>
+                        <p className="text-secondary small mb-3">{formattedDate}</p>
+                        <h1 className="display-4 mb-4">{current.temp_c}°C</h1>
+                        <p className='mb-5'>High: {current.temp_c + 2} Low: {current.temp_c - 2}</p>
                     </div>
                     <div className="col-6">
                         <div className='d-flex flex-column align-items-end gap-4 mt-4'>
-                            <div className="d-flex align-items-center justify-content-center">
+                            <div className="mt-3 d-flex align-items-center justify-content-center gap-2">
                                 <img src={current.condition.icon} alt="sun" />
-                                <p className='fs-3 fw-bold'>{current.condition.text}</p>
+                                <p className='fs-6 fw-bold'>{current.condition.text}</p>
                             </div>
                             <p className='fs-5 fw-normal'>Feels Like {current.feelslike_c}°C</p>
                         </div>
