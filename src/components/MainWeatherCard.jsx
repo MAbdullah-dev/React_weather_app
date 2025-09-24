@@ -1,7 +1,5 @@
 import { faCloudSun, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import sun from '../assets/svg/sun.svg'
-import React from 'react'
 
 const MainWeatherCard = ({ weatherData }) => {
     if (!weatherData) return <div>Loading....</div>;
